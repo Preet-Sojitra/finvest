@@ -21,6 +21,9 @@ class Room(models.Model):
     updated = models.DateTimeField(auto_now=True) # auto_now_add will run every time the model is saved
     created = models.DateTimeField(auto_now_add=True) # auto_now_add only runs one when we created the object
     
+    class Meta:
+        ordering = ['-updated', '-created']  #newest one will be added first
+    
     def __str__(self): 
         return self.name
     
