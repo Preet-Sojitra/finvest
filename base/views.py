@@ -68,7 +68,14 @@ def home(request):
 
     context =  {'rooms': rooms, 'topics': topics, 'room_count': room_count}
     
-    return render(request, 'base/home.html',context ) 
+    return render(request, 'base/home.html', context) 
+
+def topicsPage(request):
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    topics = Topic.objects.filter(name__icontains=q)
+    return render(request, 'base/topics_segment.html', {'topics': topics})
+
+
 
 def room(request, pk):
     room = Room.objects.get(id=pk)
@@ -77,9 +84,11 @@ def room(request, pk):
     return render(request, 'base/room.html', context)
 
 def userProfile(request, pk):
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    topics = Topic.objects.filter(name__icontains=q)
     user = User.objects.get(id=pk)
     rooms = user.room_set.all()
-    context = {'user': user, 'rooms': rooms}
+    context = {'user': user, 'rooms': rooms, 'topics': topics}
     return render(request, 'base/profile.html', context)
 
 @login_required(login_url='login')
