@@ -52,7 +52,7 @@ def registerPage(request):
     else:
         messages.error(request, 'An error occur during registration')
     
-    return redirect(request, 'base/login_register.html', {'form': form})
+    return render(request, 'base/login_register.html', {'form': form})
 
 def home(request):
     q= request.GET.get('q') if request.GET.get('q') != None else ''
