@@ -1,6 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
 :root {
+  --color-main: #729ac7;
+  --color-main-light: #f7fbfc;
+  --color-dark: #c9d6df;
+  --color-dark-medium: #b9d7ea;
+  --color-dark-light: #fafafa;
+  --color-light: #3d74b3;
+  --color-gray: #1e2022;
+  --color-light-gray: #000000;
+  --color-bg: #2d2d39;
+  --color-success: #5dd693;
+  --color-error: #fc4b0b;
+}
+/* :root {
   --color-main: #71c6dd;
   --color-main-light: #e1f6fb;
   --color-dark: #3f4156;
@@ -12,7 +25,7 @@
   --color-bg: #2d2d39;
   --color-success: #5dd693;
   --color-error: #fc4b0b;
-}
+} */
 
 /*========== base styles ==========*/
 
@@ -94,9 +107,24 @@ a {
   text-decoration: underline;
 }
 
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+}
+
+.google-btn {
+  margin-top: 15px;
+}
+.google-btn a {
+  text-align: center;
+}
+
 .btn--main {
   background-color: var(--color-main);
   color: var(--color-dark);
+  text-align: center;
 }
 
 .btn:hover {
@@ -283,8 +311,7 @@ a {
 }
 
 .header__logo > img {
-  height: 3.2rem;
-  width: 3.2rem;
+  width: 100px;
 }
 
 .header__logo > h1 {
@@ -575,7 +602,8 @@ a {
   justify-content: space-between;
   margin-bottom: 3rem;
   font-weight: 500;
-  color: var(--color-light-gray);
+  /* color: var(--color-light-gray); */
+  color: var(--color-main);
   transition: all 0.3s ease-in-out;
 }
 
@@ -896,10 +924,13 @@ a {
 .profile__about {
   margin-top: 2rem;
 }
+.profile__about p {
+  color: var(--color-main);
+}
 
 .profile__about h3 {
   text-transform: uppercase;
-  color: var(--color-dark-light);
+  color: var(--color-light);
   margin-bottom: 0.5rem;
 }
 

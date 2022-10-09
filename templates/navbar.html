@@ -2,8 +2,10 @@
 <header class="header header--loggedIn">
   <div class="container">
     <a href="{% url 'home' %}" class="header__logo">
-      <img src="{% static 'images/logo.svg'%}" />
+      <img src="{% static 'images/logo.png'%}" class="logo" />
+      {% comment %}
       <h1>Finvest</h1>
+      {% endcomment %}
     </a>
     <form class="header__search" method="GET" action="{% url 'home' %}">
       <label>
