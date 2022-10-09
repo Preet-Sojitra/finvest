@@ -1,10 +1,13 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
+from django.contrib import admin
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('login/', views.loginPage, name="login"),
     path('logout/', views.logoutUser, name="logout"),
     path('register/', views.registerPage, name="register"),
+    path('social-auth/', include('social_django.urls', namespace='social')),
 
     path('', views.home, name='home'),
     # path('room/', views.room, name='room'),
