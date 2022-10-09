@@ -1,25 +1,28 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StudyBud</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/main.css' %}"
+    />
+    <title>StudyBuddy - Find study partners around the world!</title>
   </head>
-  <body>
-    <!-- We want navbar to stay on top of every page -->
-    {% include 'navbar.html' %} 
 
-    {% if messages %}
+  <body>
+    {% include 'navbar.html' %} {% if messages %}
     <ul class="messages">
       {% for message in messages %}
-        <li>{{ message }}</li>
+      <li>{{ message }}</li>
       {% endfor %}
     </ul>
-    {% endif %}
-    
-    {% block content %}
-    <!-- every page will render here -->
-    {% endblock %}
+
+    <img src="{% static 'images/forest.jpg' %}" alt="image" />
+
+    {% endif %} {% block content %} {% endblock %}
   </body>
 </html>

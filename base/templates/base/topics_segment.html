@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home page</title>
-    </head>
-    <body>
-        {% extends 'main.html' %} {% block content %}
-        <style>
-            .topic-container{
-              display:grid;
-              grid-template-columns: 1fr 3fr;
-            }
-        </style>
-        <div class="topic-container">
-            <h3>Browse Topics</h3>
-            <hr> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+  </head>
+  <body>
+    {% block content %}
+    <div class="topic-container">
+      <h3>Browse Topics</h3>
+      <hr />
 
-            <div>
-                <a href="{% url 'home' %}" >All</a>
-            </div>
+      <div>
+        <a href="{% url 'home' %}">All</a>
+      </div>
 
-            {% for topic in topics %}
-            <div>
-                <a href="{% url 'home' %}?q={{topic.name}}" >{{topic.name}}</a>
-            </div>
-            {% endfor %}
-
-        </div>
-        {% endblock content %}
-    </body>
+      {% for topic in topics %}
+      <div>
+        <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a>
+      </div>
+      {% endfor %}
+    </div>
+    {% endblock content %}
+  </body>
 </html>
