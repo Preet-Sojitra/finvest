@@ -11,6 +11,16 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from .models import Room, Topic
 from .forms import RoomForm
+import requests
+
+request_url = "https://newsapi.org/v2/top-headlines?q=startup&apiKey=573bf6d9bf2c451eb2caf5a1715cf522"
+news = {}
+
+def call_news(i):
+    data = requests.get(url=request_url)
+    js1 = data.json()
+    return js1['articles'][i]['description'], js1['articles'][i]['title'], js1['articles'][i]['url']
+
 
 def loginPage(request):
     page = 'login'
@@ -37,6 +47,7 @@ def logoutUser(request):
     logout(request)
     return redirect('home')
 
+
 def registerPage(request):
     form = UserCreationForm()
     
@@ -54,6 +65,7 @@ def registerPage(request):
     
     return render(request, 'base/login_register.html', {'form': form})
 
+
 def home(request):
     q= request.GET.get('q') if request.GET.get('q') != None else ''
 
@@ -68,7 +80,15 @@ def home(request):
 
     context =  {'rooms': rooms, 'topics': topics, 'room_count': room_count}
     
-    return render(request, 'base/home.html', context) 
+    
+    for i in range(5):
+        description, title, url = call_news(i)
+        news[title] = [description, url]
+        
+
+    context =  {'rooms': rooms, 'topics': topics, 'room_count': room_count, 'news':news}
+    
+    return render(request, 'base/home.html',context ) 
 
 def topicsPage(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
