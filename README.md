@@ -54,5 +54,8 @@ To run the App, we use :
 python3 manage.py runserver
 
 ```
+![image](https://user-images.githubusercontent.com/99275086/194752979-7ed38b7c-9ac4-4ccb-a20c-1ffc5da56483.png)
+![image](https://user-images.githubusercontent.com/99275086/194753143-d146124e-ea38-46d3-9fba-c0a75a44e825.png)
+
 
 > ⚠ Then, the development server will be started at http://127.0.0.1:8000/
