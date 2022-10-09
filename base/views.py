@@ -1,4 +1,5 @@
 from ast import If
+from calendar import c
 import imp
 from multiprocessing import context
 from pydoc import pager
@@ -9,8 +10,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
-from .models import Room, Topic
-from .forms import RoomForm
+from .models import Image, Room, Topic
+from .forms import RoomForm, ImageForm
+from django.http import HttpResponse
 
 def loginPage(request):
     page = 'login'
@@ -103,3 +105,14 @@ def createRoom(request):
     
     context = {'form': form}
     return render(request, 'base/room_form.html', context)
+
+def gallery(request):
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return HttpResponse('successfully uploaded')
+    else:
+        form = ImageForm()
+    return render(request, "base/temp1.html", {"form": form})

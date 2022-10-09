@@ -1,6 +1,9 @@
 import imp
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
 # from django.http import HttpResponse
 
 # These two (home and room) are views
@@ -16,4 +19,9 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('base.urls')), # we tell django to include base.urls in our project instead of using admin urls
+    # path('gallery', include('gallery.urls')) ye bhi karna hai and gallery 
 ]
+
+if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL,
+                              document_root=settings.MEDIA_ROOT)
