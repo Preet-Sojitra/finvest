@@ -29,6 +29,7 @@
             />
           </div>
 
+          <div class="btn-container">
           <button class="btn btn--main" type="submit">
             <svg
               version="1.1"
@@ -37,11 +38,6 @@
               height="32"
               viewBox="0 0 32 32"
             >
-              <div class="col-md-8 mx-auto social-container my-2 order-md-1">
-                <button class = "btn btn-primary mb-2">
-                  <a href="{% url 'social:begin' 'google-oauth2' %}">Signup with Google</a>
-              </button>
-            </div>
               <title>lock</title>
               <path
                 d="M27 12h-1v-2c0-5.514-4.486-10-10-10s-10 4.486-10 10v2h-1c-0.553 0-1 0.447-1 1v18c0 0.553 0.447 1 1 1h22c0.553 0 1-0.447 1-1v-18c0-0.553-0.447-1-1-1zM8 10c0-4.411 3.589-8 8-8s8 3.589 8 8v2h-16v-2zM26 30h-20v-16h20v16z"
@@ -50,14 +46,17 @@
                 d="M15 21.694v4.306h2v-4.306c0.587-0.348 1-0.961 1-1.694 0-1.105-0.895-2-2-2s-2 0.895-2 2c0 0.732 0.413 1.345 1 1.694z"
               ></path>
             </svg>
+            <p>
 
               Login
+            </p>
             </button>
             <button class="btn btn-primary mb-2 google-btn">
               <a href="{% url 'social:begin' 'google-oauth2' %}">
                 Signin with Google
               </a>
             </button>
+          </div>
           </div>
         </form>
 
@@ -78,7 +77,7 @@
         </div>
       </div>
       <div class="layout__body">
-        <h2 class="auth__tagline">Find your study partner</h2>
+        <h2 class="auth__tagline">LOGIN PORTAL</h2>
 
         <form class="form" action="" method="POST">
           {% csrf_token %} {% for field in form %}
