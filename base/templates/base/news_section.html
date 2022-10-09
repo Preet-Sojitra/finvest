@@ -1,0 +1,15 @@
+<div class="activities">
+  <div class="activities__header">
+    <h2>Latest Buzz in Startup</h2>
+  </div>
+
+  <div class="activities__box">
+    {% for tit, des in news.items %}
+    <div class="news-container">
+      <a href="{{des.1}}" target="blank"><h3>{{tit}}</h3></a>
+      <p class="news-para">{{des.0}}</p>
+      <hr />
+    </div>
+    {% endfor %}
+  </div>
+</div>

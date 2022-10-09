@@ -718,6 +718,14 @@ a {
   height: 1.6rem;
 }
 
+.roomListRoom__content > p {
+  max-height: 62px;
+  overflow: hidden;
+}
+.roomListRoom__content > span {
+  font-size: 25px;
+}
+
 .roomListRoom__topic {
   padding: 5px 1.5rem;
   background-color: var(--color-dark-medium);

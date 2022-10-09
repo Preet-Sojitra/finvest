@@ -108,7 +108,12 @@ def userProfile(request, pk):
     topics = Topic.objects.filter(name__icontains=q)
     user = User.objects.get(id=pk)
     rooms = user.room_set.all()
-    context = {'user': user, 'rooms': rooms, 'topics': topics}
+    
+    for i in range(5):
+        description, title, url = call_news(i)
+        news[title] = [description, url]
+        
+    context = {'user': user, 'rooms': rooms, 'topics': topics, 'news':news}
     return render(request, 'base/profile.html', context)
 
 @login_required(login_url='login')
