@@ -110,7 +110,7 @@ a {
 .btn-container {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 45%;
   margin: auto;
 }
 
@@ -874,7 +874,7 @@ a {
 }
 
 .auth__action {
-  margin-top: 3rem;
+  margin: 3rem 0;
   text-align: center;
 }
 
