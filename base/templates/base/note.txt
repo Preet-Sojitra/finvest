@@ -1,4 +1,0 @@
-We can seperate different templates for different apps (done for usually big apps)
-Our app templates will be inside base/templates.
-Inside base/templates we have to make another folder with same name as our app (here base)
-To use the templates inside base we have to change the paths in views.py
