@@ -11,6 +11,12 @@
 
     <input type="submit" value="Login" />
   </form>
+  <div class="col-md-8 mx-auto social-container my-2 order-md-1">
+    <button class = "btn btn-primary mb-2">
+        <a href="{% url 'social:begin' 'google-oauth2' %}">Signup with Google</a>
+    </button>
+  </div>
+
 
   <p>havent signed up yet?</p>
   <a href="{% url 'register' %}">Sign up</a>

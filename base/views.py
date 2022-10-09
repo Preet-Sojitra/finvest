@@ -11,6 +11,15 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from .models import Room, Topic
 from .forms import RoomForm
+import requests
+
+request_url = "https://newsapi.org/v2/top-headlines?q=startup&apiKey=573bf6d9bf2c451eb2caf5a1715cf522"
+news = {}
+
+def call_news(i):
+    data = requests.get(url=request_url)
+    js1 = data.json()
+    return js1['articles'][i]['description'], js1['articles'][i]['title'], js1['articles'][i]['url']
 
 def loginPage(request):
     page = 'login'
@@ -64,9 +73,17 @@ def home(request):
     )
 
     topics = Topic.objects.all()
+
     room_count = rooms.count()
 
-    context =  {'rooms': rooms, 'topics': topics, 'room_count': room_count}
+    # context =  {'rooms': rooms, 'topics': topics, 'room_count': room_count}
+        
+    for i in range(5):
+        description, title, url = call_news(i)
+        news[title] = [description, url]
+
+    context =  {'rooms': rooms, 'topics': topics, 'room_count': room_count, 'news':news}
+    
     
     return render(request, 'base/home.html', context) 
 

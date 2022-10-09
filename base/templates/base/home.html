@@ -46,7 +46,22 @@
         {% endfor %}
       </div>
     </div>
+      <div>
+        <h3> Buzz in Startups </h3>
+        <hr>
+    
+        <div>
+          {% for tit, des in news.items %}
+            <a href={{des.1}}><h3> {{tit}}</h3></a>
+            <li> {{des.0}} </li>
+            <hr>
+          {% endfor %}
+            
+        </div>
+  
+      </div>
     </div>
+    
     
     {% endblock content %}
   </body>
