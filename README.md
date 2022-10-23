@@ -60,8 +60,9 @@ python3 manage.py runserver
 
 
 ![image](https://user-images.githubusercontent.com/99275086/194753143-d146124e-ea38-46d3-9fba-c0a75a44e825.png)
-![1](https://user-images.githubusercontent.com/87543808/194753364-229fcbbc-33e7-4555-b63f-456cd9e9abed.jpg)
-![Screenshot 2022-10-09 163522](https://user-images.githubusercontent.com/87543808/194753368-c4e5b76e-316e-434d-b4da-8cb99cf1ee83.jpg)
-![Screenshot 2022-10-09 163710](https://user-images.githubusercontent.com/87543808/194753436-42b4683c-737c-49fe-a4ee-f1b4db81b5bc.jpg)
+![image](https://user-images.githubusercontent.com/87543808/195787618-2f68623e-c46b-4334-a83d-f4b688fca05e.png)
+![image](https://user-images.githubusercontent.com/87543808/195786873-8bdee248-eb56-4d5d-8025-63074a71c275.png)
+![image](https://user-images.githubusercontent.com/87543808/195787894-bff05c16-9fe4-4ad8-9dce-6234b7c0bd5f.png)
+![image](https://user-images.githubusercontent.com/87543808/195788087-0e4fa6b5-6d5d-4da7-b5fa-a290412abf24.png)
 
 
