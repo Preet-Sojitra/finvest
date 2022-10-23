@@ -1,5 +1,9 @@
 # Team AlphaCodes
 
+Built-by: [Preet Sojitra](https://github.com/Preet-Sojitra) ,
+[Kalash Jain](https://github.com/kalashjain23) ,
+[Amit Ramrakhyani](https://github.com/Amit-Ramrakhyani) , [Manan Gupta](https://github.com/manan152003) and Jaivik Jariwala
+
 **Problem Statement**: “Limited access to funding” and “inadequate support system” are the biggest challenges faced by women-owned businesses, according to Forbes. Build a platform that allows female business owners to publicize their businesses and include their story/inspiration behind how it started. By assigning a predefined category to which the business belongs, users can filter the list of categories according to their requirements.
 
 **Our Approach**: We are creating a platform for women entrepreneurs to list their startup to get the recognition and funding they deserve!
